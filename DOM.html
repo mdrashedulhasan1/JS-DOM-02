@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="blog-container">
+        <li>Blog-01</li>
+        <li>Blog-02</li>
+        <li>Blog-03</li>
+    </ul>
+    <section id="box-container">
+        <article class="box">
+            <h3>Box-01</h3>
+            <p class="p-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur rem. Esse in maxime voluptatem quia facere sit doloribus aperiam.</p>
+        </article>
+        <article class="box">
+            <h3>Box-02</h3>
+            <p class="p-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur rem. Esse in maxime voluptatem quia facere sit doloribus aperiam.</p>
+        </article>
+        <article class="box">
+            <h3>Box-03</h3>
+            <p class="p-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur rem. Esse in maxime voluptatem quia facere sit doloribus aperiam.</p>
+        </article>
+    </section>
+    <script>
+        const li = document.createElement('li');
+        li.innerText = 'Blog-04';
+        const blogContainer = document.getElementById('blog-container');
+        blogContainer.appendChild(li);
+        blogContainer.style.border = '2px solid red';
+        blogContainer.style.height = '100px';
+        blogContainer.style.width = '200px';
+        blogContainer.style.backgroundColor = 'lightblue';
+        blogContainer.style.borderRadius = '20px';
+
+        const article = document.createElement('article');
+        article.classList.add('box');
+        const h3 = document.createElement('h3');
+        h3.innerText = 'Box-04';
+        const p = document.createElement('p');
+        p.classList.add('p-text');
+        p.innerText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, consectetur rem. Esse in maxime voluptatem quia facere sit doloribus aperiam.';
+        article.appendChild(h3);
+        article.appendChild(p);
+        const boxContainer = document.getElementById('box-container');
+        boxContainer.appendChild(article);
+
+        // getElementsByTagName
+        const blogH3 = document.getElementsByTagName('h3');
+        for(const h3 of blogH3){
+            h3.style.color = 'tomato';
+            h3.style.fontSize = '30px';
+        }
+
+        // getElementsByClassName
+        const blogP = document.getElementsByClassName('p-text');
+        for(const p of blogP){
+            p.style.color = 'blue';
+            p.style.fontSize = '25px';
+            p.style.fontWeight = '600';
+        }
+
+        const blogArticle = document.getElementsByClassName('box');
+        for(const article of blogArticle){
+            article.style.border = '2px solid yellow';
+            article.style.backgroundColor = 'gray';
+            article.style.padding = '10px 20px';
+            article.style.margin = '5px 10px';
+            article.style.borderRadius = '10px';
+        }
+
+        // getElementById
+        const boxContainerStyle = document.getElementById('box-container');
+        boxContainerStyle.style.backgroundColor = 'green';
+        boxContainer.style.padding = '30px';
+        boxContainer.style.borderRadius = '20px';
+    </script>
+</body>
+</html>
